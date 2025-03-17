@@ -12,18 +12,14 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook() : _index(0), _is_full(false)
 {
-	this->_index = 0;
-	this->_is_full = false;
 	std::cout << "PhoneBook constructor called." << std::endl;
-	return ;
 }
 
 PhoneBook::~PhoneBook()
 {
 	std::cout << "PhoneBook destructor called." << std::endl;
-	return ;
 }
 
 void PhoneBook::set_information()
@@ -77,8 +73,10 @@ void PhoneBook::get_information() const
 	{
 		std::string input;
 		std::cout << "Please enter the index of the contact you wish to display (1-8). (0 to quit searching)\nIndex: ";
-		while (!(std::getline(std::cin, input)) || input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0
-			|| (std::atoi(input.c_str()) - 1 >= this->_index && this->_is_full == false))
+		while (!(std::getline(std::cin, input)) || input.length() > 1
+			|| input.compare("0") < 0 || input.compare("8") > 0
+			|| (std::atoi(input.c_str()) - 1 >= this->_index
+				&& this->_is_full == false))
 		{
 			if (std::cin.eof() == true)
 			{

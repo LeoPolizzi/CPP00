@@ -12,26 +12,19 @@
 
 #include "Contact.hpp"
 
-std::string Contact::_fields[5] = {
-	"First Name",
-	"Last Name",
-	"Nickname",
-	"Phone Number",
-	"Darkest Secret"
-};
+std::string Contact::_fields[5] = {"First Name", "Last Name", "Nickname",
+	"Phone Number", "Darkest Secret"};
 
 Contact::Contact(void)
 {
 	std::cout << "Contact constructor called." << std::endl;
 	for (int i = FirstName; i <= DarkestSecret; i++)
 		this->_informations[i] = std::string();
-	return ;
 }
 
 Contact::~Contact(void)
 {
 	std::cout << "Contact destructor called." << std::endl;
-	return ;
 }
 
 void Contact::set_informations(void)
@@ -58,7 +51,7 @@ void Contact::set_informations(void)
 	std::cout << "Contact successfully added." << std::endl;
 }
 
-void Contact::get_informations(int index)const
+void Contact::get_informations(int index) const
 {
 	std::cout << "|" << std::setw(10) << index;
 	for (int i = FirstName; i <= Nickname; i++)

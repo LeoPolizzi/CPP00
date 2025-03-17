@@ -30,7 +30,7 @@ class PhoneBook
 	~PhoneBook();
 
 	void set_information();
-	void get_information()const;
+	void get_information() const;
 	void show_instruction();
 };
 
