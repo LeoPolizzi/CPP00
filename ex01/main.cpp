@@ -10,19 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-
-int main(void)
+int	main(void)
 {
-	PhoneBook 	PhoneBook;
-	bool		run = true;
-	std::string	command;
+	PhoneBook	PhoneBook;
+	std::string command;
 
 	PhoneBook.show_instruction();
 	std::cout << "$>";
-	while (run && std::getline(std::cin, command))
+	while (std::getline(std::cin, command))
 	{
 		if (std::cin.eof() == true)
 		{
@@ -36,8 +34,7 @@ int main(void)
 		else if (command.compare("EXIT") == 0)
 		{
 			std::cout << "Exiting phonebook now." << std::endl;
-			run = false;
-			continue ;
+			break ;
 		}
 		command.clear();
 		PhoneBook.show_instruction();
